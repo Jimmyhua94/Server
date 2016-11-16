@@ -22,7 +22,7 @@ console.log('success');
 app.use(express.static('public'));
 
 app.use(function(req,res,next){
-    res.status(404).sendFile('public/nojs/404.html',{root: __dirname});
+    res.status(404).redirect('/#'+req.orignalUrl);
 });
 
 app.listen(80,function(){
